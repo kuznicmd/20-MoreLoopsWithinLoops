@@ -418,7 +418,7 @@ def first_is_elsewhere_too(seq_seq):
     and the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -434,6 +434,13 @@ def first_is_elsewhere_too(seq_seq):
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
 
+    for i in range(len(seq_seq[0])):
+        x = seq_seq[0][i]
+        for k in range(1, len(seq_seq), 1):
+            for j in range(len(seq_seq[k])):
+                if seq_seq[k][j] == x:
+                    return True
+    return False
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
